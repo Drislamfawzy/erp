@@ -5,58 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>dr.islam ERP - نظام إدارة المصنع</title>
     
-    <!-- ربط ملف الـ Manifest لتمكين التثبيت على سطح المكتب والهاتف -->
+    <!-- ربط ملف الـ Manifest لتمكين التثبيت -->
     <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#4f46e5">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
-        body {
+        body, html {
+            width: 100%;
+            height: 100%;
             background: #0b0f19;
-            color: #ffffff;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             overflow: hidden;
         }
-        .loading-box {
-            text-align: center;
-            font-size: 0.95rem;
-            color: #94a3b8;
-        }
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #334155;
-            border-top: 4px solid #4f46e5;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        /* إطار يملأ الشاشة بالكامل ويحفظ رابط جيت هب في الأعلى */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <div class="loading-box">
-        <div class="spinner"></div>
-        جاري تحميل نظام dr.islam ERP...
-    </div>
-
-    <script>
-        // رابط سيرفر جوجل سكريبت الحي الخاص بك
-        const targetUrl = "https://script.google.com/macros/s/AKfycby3a7tqidBa6Hv218Rm9kC1pezsK3UVyI3_zjsKO3ASS9F81MzxolHEoiuJN5rWrWnVXg/exec";
-
-        // التحويل المباشر والفوري بمجرد فتح الرابط
-        window.location.replace(targetUrl);
-    </script>
+    <!-- استدعاء النظام بملء الشاشة مع بقاء رابط جيت هب في الأعلى -->
+    <iframe src="https://script.google.com/macros/s/AKfycby3a7tqidBa6Hv218Rm9kC1pezsK3UVyI3_zjsKO3ASS9F81MzxolHEoiuJN5rWrWnVXg/exec"></iframe>
 
 </body>
 </html>
