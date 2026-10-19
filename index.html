@@ -2,51 +2,105 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EIPI Factory ERP - Live Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>dr.islam ERP - تطبيق إدارة المصنع</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #0f172a;
+            background-color: #0b0f19;
+            color: #ffffff;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            font-family: 'Cairo', sans-serif;
-        }
-        /* إطار هاتف موبايل وهمي أنيق يحيط بالنظام */
-        .phone-frame {
-            width: 100%;
-            max-width: 420px;
-            height: 100%;
-            max-height: 850px;
-            background: #ffffff;
-            border-radius: 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
             overflow: hidden;
-            border: 10px solid #1e293b;
-            position: relative;
         }
+
+        /* حاوية تظهر كأنها خلفية لشاشة الكمبيوتر وفي المنتصف إطار الهاتف */
+        .desktop-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+        }
+
+        /* إطار الهاتف المودرن الفخم (Phone Mockup) */
+        .phone-mockup {
+            width: 100%;
+            max-width: 410px;
+            height: 100%;
+            max-height: 840px;
+            background: #000000;
+            border-radius: 46px;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 12px #1e293b, 0 0 0 14px #334155;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* شريط علوي وهمي للكاميرا والسماعة (Dynamic Island / Notch) */
+        .phone-notch {
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 26px;
+            background: #1e293b;
+            border-radius: 20px;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .phone-notch::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #0f172a;
+            border-radius: 50%;
+            position: absolute;
+            right: 18px;
+        }
+
+        /* شاشة الـ iframe التي تعرض نظامك الحي بالكامل بالداخل */
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+            background: #ffffff;
+            margin-top: 0;
         }
+
+        /* إذا فتح المستخدم الموقع من هاتف حقيقي، يملأ الشاشة بالكامل بدون إطار مزعج */
         @media (max-width: 480px) {
-            .phone-frame {
-                border: none;
+            body { background: #ffffff; padding: 0; }
+            .desktop-wrapper { padding: 0; }
+            .phone-mockup {
+                max-width: 100%;
+                max-height: 100%;
                 border-radius: 0;
-                max-height: 100vh;
+                box-shadow: none;
+                border: none;
             }
+            .phone-notch { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="phone-frame">
-        <!-- يتم هنا استدعاء نظامك الحي الموجود في جوجل سكريبت بالكامل دون تعديل سطر واحد -->
-        <iframe src="https://script.google.com/macros/s/AKfycby3a7tqidBa6Hv218Rm9kC1pezsK3UVyI3_zjsKO3ASS9F81MzxolHEoiuJN5rWrWnVXg/exec"></iframe>
+    <div class="desktop-wrapper">
+        <div class="phone-mockup">
+            <!-- نوتش الهاتف الجمالي -->
+            <div class="phone-notch"></div>
+
+            <!-- استدعاء نظامك الحي في جوجل سكريبت ليعمل داخل الإطار وكأنه تطبيق هاتف حقيقي -->
+            <iframe src="https://script.google.com/macros/s/AKfycby3a7tqidBa6Hv218Rm9kC1pezsK3UVyI3_zjsKO3ASS9F81MzxolHEoiuJN5rWrWnVXg/exec"></iframe>
+        </div>
     </div>
 
 </body>
