@@ -1,0 +1,15 @@
+{
+  "name": "dr.islam ERP - نظام إدارة المصنع",
+  "short_name": "dr.islam ERP",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/color/512/factory.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
